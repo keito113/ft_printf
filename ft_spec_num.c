@@ -6,7 +6,7 @@
 /*   By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 10:26:03 by keitabe           #+#    #+#             */
-/*   Updated: 2025/05/13 13:17:46 by keitabe          ###   ########.fr       */
+/*   Updated: 2025/05/14 17:19:17 by keitabe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ static ssize_t	print_num_count(unsigned int n)
 	return (i);
 }
 
-int	handle_d_i(va_list ap)
+int	handle_d_i(va_list *ap)
 {
 	int		num;
 	ssize_t	len;
 
 	len = 0;
-	num = va_arg(ap, int);
+	num = va_arg(*ap, int);
 	if (num == INT_MIN)
 		return ((int)write(1, "-2147483648", 11));
 	if (num < 0)
@@ -43,12 +43,12 @@ int	handle_d_i(va_list ap)
 	return ((int)len);
 }
 
-int	handle_u(va_list ap)
+int	handle_u(va_list *ap)
 {
 	unsigned int	num;
 	ssize_t			len;
 
-	num = va_arg(ap, unsigned int);
+	num = va_arg(*ap, unsigned int);
 	len = 0;
 	if (num == 0)
 		return ((int)write(1, "0", 1));
