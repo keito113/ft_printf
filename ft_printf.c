@@ -6,7 +6,7 @@
 /*   By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 14:17:12 by keitabe           #+#    #+#             */
-/*   Updated: 2025/05/15 10:59:15 by keitabe          ###   ########.fr       */
+/*   Updated: 2025/05/15 18:03:45 by keitabe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	ft_printf(const char *str, ...)
 	len = 0;
 	va_start(ap, str);
 	if (!str)
-		return ((int)write(1, "(null)", 6));
+		return (-1);
 	while (*str)
 	{
 		if (*str == '%')
@@ -79,7 +79,8 @@ int	ft_printf(const char *str, ...)
 
 // int	main(void)
 // {
-// 	int	var;
+// 	int		var;
+// 	char	*test23;
 
 // 	int r1, r2;
 // 	var = 42;
@@ -230,6 +231,23 @@ int	ft_printf(const char *str, ...)
 // 	printf(" | ret=%d\n", r1);
 // 	ft_printf("ft :  ");
 // 	r2 = ft_printf("Mix:%c%s%p%d%u%x%X%%", 'A', "Hi", (void *)&var, -1, 1u,
+// 			255u, 255u);
+// 	printf(" | ret=%d\n\n", r2);
+// 	printf("Test 22: %%c NULL\n");
+// 	printf("orig: ");
+// 	r1 = printf(NULL);
+// 	printf(" | ret=%d\n", r1);
+// 	ft_printf("ft :  ");
+// 	r2 = ft_printf(NULL);
+// 	printf(" | ret=%d\n\n", r2);
+// 	test23 = 0;
+// 	printf("Test 23: Mix all specifiers\n");
+// 	printf("orig: ");
+// 	r1 = printf("Mix:%c%s%p%d%u%x%X%%", 'A', test23, (void *)&var, -1, 1u, 255u,
+// 			255u);
+// 	printf(" | ret=%d\n", r1);
+// 	ft_printf("ft :  ");
+// 	r2 = ft_printf("Mix:%c%s%p%d%u%x%X%%", 'A', test23, (void *)&var, -1, 1u,
 // 			255u, 255u);
 // 	printf(" | ret=%d\n", r2);
 // 	return (0);

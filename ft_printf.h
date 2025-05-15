@@ -6,7 +6,7 @@
 /*   By: keitabe <keitabe@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/12 10:02:48 by keitabe           #+#    #+#             */
-/*   Updated: 2025/05/14 16:38:59 by keitabe          ###   ########.fr       */
+/*   Updated: 2025/05/15 16:26:53 by keitabe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include "libft.h"
 # include <limits.h>
 # include <stdarg.h>
-# include <stdlib.h>
 # include <unistd.h>
 
 int	ft_printf(const char *str, ...);
